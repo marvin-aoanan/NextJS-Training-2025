@@ -5,3 +5,4 @@
 #### 1. hello-world
 #### 2. routing
 #### 3. Meta data
+#### 4. Params and Search Params in Server and Client Component

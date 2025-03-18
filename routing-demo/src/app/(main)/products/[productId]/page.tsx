@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-//import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ productId: string }>;
@@ -19,8 +19,8 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 
 export default async function ProductDetails({params}: Props) {
   const productId = (await params).productId;
-  // if (parseInt(productId) > 1000) {
-  //   notFound();
-  // }
+  if (parseInt(productId) > 1000) {
+    notFound();
+  }
   return <h1>Details about product {productId}</h1>;
 }

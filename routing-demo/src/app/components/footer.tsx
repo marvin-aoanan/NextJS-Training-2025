@@ -4,9 +4,10 @@ export default function Footer() {
       style={{
         backgroundColor: "#CCC",
         padding: "1rem",
+        textAlign: "center",
       }}
     >
-      <p>Footer</p>
+      <p>Copyright 2025. All rights reserved.</p>
     </footer>
   );
 }
