@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'About Me',
+  title: 'About Marvin',
   description: 'Learn more about the author of this site.',
 }
 
