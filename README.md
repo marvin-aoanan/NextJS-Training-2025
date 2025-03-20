@@ -6,3 +6,6 @@
 #### 2. routing
 #### 3. Meta data
 #### 4. Params and Search Params in Server and Client Component
+#### 5. layout, template, error, loading, not-found, page
+#### 6. Error handling
+#### 6. Intercepting routes (.) | (..) | (..)(..) | (...)

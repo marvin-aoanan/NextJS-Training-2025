@@ -18,7 +18,6 @@ import Link from "next/link"
 import Footer from "../components/footer"
 import { usePathname } from "next/navigation"
 
-
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/login", label: "Login" },
@@ -30,28 +29,25 @@ export default function AuthLayout({ children, }: { children: React.ReactNode; }
   const pathname = usePathname();
   const [input, setInput] = useState("");
   return ( 
-    <html lang="en">
-      <body>
-        <nav className="bg-gray-800 text-white p-4">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`) && link.href !== "/"
-              return (
-                <Link 
-                  key={link.href}
-                  href={link.href}
-                  className={isActive ? "font-bold mr-4" : "mr-4"} >
-                    {link.label}
-                </Link>
-              )
-            })}
-            </nav>
-            <input value={input} onChange={e => setInput(e.target.value)} />
-            <main className="p-4">
-              {children}
-            </main>
-            <Footer />
-        
-      </body>
-    </html>
+    <>
+      <nav className="bg-gray-800 text-white p-4">
+        {navLinks.map((link) => {
+          const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`) && link.href !== "/"
+          return (
+            <Link 
+              key={link.href}
+              href={link.href}
+              className={isActive ? "font-bold mr-4" : "mr-4"} >
+                {link.label}
+            </Link>
+          )
+        })}
+      </nav>
+        <input value={input} onChange={e => setInput(e.target.value)} />
+        <main className="p-4">
+          {children}
+        </main>
+        <Footer />
+      </>
   )
 }

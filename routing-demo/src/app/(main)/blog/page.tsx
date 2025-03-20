@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 
 import { Metadata } from "next"
 import Link from "next/link"
+import { resolve } from "path";
 
 export const metadata: Metadata = {
   // title: 'Blog', this uses the default title from layout.tsx
@@ -22,7 +23,12 @@ export const metadata: Metadata = {
   }
 }
 
-export default function Blog() {
+export default async function Blog() {
+  await new Promise(resolve => {
+    setTimeout(() => {
+      resolve("Intentional delay...");
+    }, 2000)
+  })
   return (
     <div className="p-4">
     <h1>Welcome to my Blog 2025!</h1>

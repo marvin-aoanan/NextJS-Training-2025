@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 import Footer from "../components/footer"
 import Header from "../components/header"
 import Navigation from "../components/navigation";
+import { ErrorWrapper } from "./error-wrapper";
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +36,9 @@ export default function MainLayout({
       <body>
         <Header />
         <Navigation />
-        {children}
+        <ErrorWrapper>
+          {children}
+        </ErrorWrapper>
         <Footer />
       </body>
     </html>
